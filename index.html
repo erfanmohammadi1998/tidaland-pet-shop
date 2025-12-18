@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="تیدا لند - فروشگاه آنلاین محصولات باکیفیت حیوانات خانگی" />
+  <title>تیدا لند | خانه شادی و سلامتی پت شما</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+ <header class="header">
+  <nav class="navbar">
+    <div class="logo">تیدا لند</div>
+    <ul class="nav-list">
+      <li><a href="#about">درباره ما</a></li>
+      <li><a href="#products" class="active">محصولات</a></li>
+      <li><a href="#contact">تماس با ما</a></li>
+    </ul>
+    <div class="hamburger">☰</div>
+  </nav>
+
+  <div class="header-content">
+    <h1>تیدا لند</h1>
+    <p>سرزمین شادی و بازی پت‌هاست!<br>جایی که هر لحظه پر از عشق و خاطره‌های قشنگ می‌شه 🐶🐾</p>
+    <a href="#products" class="btn">مشاهده محصولات</a>
+  </div>
+</header>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-text">
+        <span class="subtitle">بهترین برای پت شما</span>
+        <h2>ما که هستیم</h2>
+        <p>ما مفتخریم که همراه هزاران خانواده عاشق پت هستیم، بهترین محصولات و خدمات رو فقط برای سلامتی و خوشحالی پت عزیزتون فراهم کردیم و بخشی از جامعه‌ای بزرگ و گرم هستیم که پت‌ها رو مثل عضو خانواده دوست دارن. ❤️</p>
+        <a href="#products" class="btn">بیشتر ببینید</a>
+      </div>
+      <div class="about-images">
+        <img src="images/download.jfif" alt="پت شاد با صاحبش" loading="lazy">
+        <img src="images/1708779881_F7uR9.jpg" alt="سگ در حال بازی" loading="lazy">
+        <img src="images/1708779881_I7mU7.jpg" alt="گربه ناز" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products" id="products">
+    <div class="container">
+      <span class="subtitle">خدمات و محصولات</span>
+      <h2>محصولات ما</h2>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="images/pet-food.webp" alt="غذا و تغذیه پت">
+          <h3>غذا و تغذیه</h3>
+          <p>غذای خشک، مرطوب، تشویقی، مکمل‌های ویتامینی و رژیم‌های خاص</p>
+          <a href="food.html" class="btn-small">مشاهده محصولات</a>
+        </div>
+        <div class="product-card">
+          <img src="images/pet-toys.jpg" alt="اسباب بازی حیوانات">
+          <h3>لوازم بازی و سرگرمی</h3>
+          <p>اسباب‌بازی، توپ، طناب، گربه‌درخت، لیزر و بازی‌های هوشمند</p>
+          <a href="toys.html" class="btn-small">مشاهده محصولات</a>
+        </div>
+        <div class="product-card">
+          <img src="images/petcare.webp" alt="لوازم بهداشتی پت">
+          <h3>مراقبت و بهداشت</h3>
+          <p>شامپو، مسواک، شانه، ضد انگل، ظرف غذا و آب، پوشاک</p>
+          <a href="care.html" class="btn-small">مشاهده محصولات</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <p>تماس با ما: 09377747217 | erfan.mohammadi.alv77@gmail.com</p>
+      <div class="social">
+        <a href="#">اینستاگرام</a> • <a href="#">تلگرام</a> • <a href="#">واتس‌اپ</a>
+      </div>
+      <p>&copy; ۱۴۰۴ تیدا لند - همه حقوق محفوظ است</p>
+    </div>
+  </footer>
+
+ <script>
+  let slideIndex = 0;
+  const slidesContainer = document.querySelector('.slides-container');
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.slider-dots span');
+  const totalSlides = slides.length;
+
+  function showSlide(n) {
+    slideIndex = (n + totalSlides) % totalSlides;
+    // حرکت اسلایدر با درصد دقیق
+    slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+    // فعال کردن دات مربوطه
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === slideIndex);
+    });
+  }
+
+  // کلیک روی دات‌ها
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => showSlide(i));
+  });
+
+  // اتوماتیک هر ۳ ثانیه
+  setInterval(() => {
+    slideIndex++;
+    showSlide(slideIndex);
+  }, 3000);
+
+  // شروع با اسلاید اول
+  showSlide(0);
+</script>
+</body>
+</html>
